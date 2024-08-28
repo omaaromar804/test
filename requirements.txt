@@ -1,2 +1,2 @@
     flet
-    flet build apk --include-packages permission_handler flet_flashlight
+    
