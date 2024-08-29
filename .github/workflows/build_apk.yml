@@ -39,6 +39,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install flashlight
 
     - name: Setup Flutter ${{ env.FLUTTER_VERSION }}
       uses: subosito/flutter-action@v2
@@ -54,7 +55,7 @@ jobs:
     - name: Flet Build APK
       run: |
         flutter config --no-analytics
-        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --include-packages permission_handler flet_flashlight
+        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4.3.4
